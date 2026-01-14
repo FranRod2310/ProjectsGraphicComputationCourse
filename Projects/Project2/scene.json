@@ -1,0 +1,287 @@
+{
+    "name": "world",
+    "type": "internal",
+    "transform": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1]
+    },
+    "parts": [
+        
+        {"name": "evenTile", "type": "leaf", "primitive": "cube", "transform": {"translation": [0, 0, 0], "rotation": [0, 0, 0], "scale": [4, 0.1, 4]}, "color":[0.941, 0.588, 0.094, 1.0]},
+        {"name": "oddTile", "type": "leaf", "primitive": "cube", "transform": {"translation": [0, 0, 0], "rotation": [0, 0, 0], "scale": [4, 0.1, 4]}, "color": [0.6275, 0.3686, 0.0, 1.0]},
+        {"name": "lowerBase", "type": "leaf", "primitive": "cube", "transform": {"translation": [0, 0, 0], "rotation": [0, 0, 0], "scale": [7, 1, 3]}, "color": [0.294, 0.326, 0.126, 1.0]},
+        {"name": "upperBase", "type": "leaf", "primitive": "cube", "transform": {"translation": [0, 0, 0], "rotation": [0, 0, 0], "scale": [8, 1, 4]}, "color": [0.392, 0.439, 0.157, 1.0]},
+        {"name": "cabin", "type": "leaf", "primitive": "cube", "transform": {"translation": [0, 0, 0], "rotation": [0, 0, 0], "scale": [4, 1.5, 2]}, "color": [0.333, 0.373, 0.137, 1.0]},
+        {"name": "leftWheelNode", "type": "internal", "transform": {"translation": [0, 0, 0], "rotation": [0, 180, 0], "scale": [1, 1, 1]}, "uses": "wheelNode"},
+        {"name": "rightWheelNode", "type": "internal", "transform": {"translation": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1]}, "uses": "wheelNode"},
+        {"name": "wheelNode", "type": "internal", "transform": {"translation": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1]}, "children": [
+            {"name": "wheel", "type": "leaf", "primitive": "cylinder", "transform": {"translation": [0, 0, 0], "rotation": [90, 0, 0], "scale": [1, 0.5, 1]}, "color": [0.05, 0.05, 0.05, 1.0]},
+            {"name": "wheelSegment", "type": "leaf", "primitive": "cube", "transform": {"translation": [0, 0.25, 0.30], "rotation": [0, 0, 0], "scale": [0.1, 0.5, 0.1]}, "color": [0.25, 0.15, 0.05, 1.0]}
+        ]},
+        {"name": "lid", "type": "leaf", "primitive": "cylinder", "transform": {"translation": [0, 0, 0], "rotation": [0, 0, 0], "scale": [2, 0.2, 2]}, "color": [0.275, 0.306, 0.118, 1.0]},
+        {"name": "cannonSupport", "type": "leaf", "primitive": "cylinder", "transform": {"translation": [0, 0, 0], "rotation": [90, 0, 0], "scale": [0.5, 0.5, 0.5]}, "color": [0.2, 0.2, 0.2, 1.0]},
+        {"name": "cannon", "type": "leaf", "primitive": "cylinder", "transform": {"translation": [0, 0, 0], "rotation": [0, 0, 90], "scale": [0.2, 4, 0.2]}, "color": [0.25, 0.14, 0, 1.0]},
+        {"name": "tomato", "type": "leaf", "primitive": "sphere", "transform": {"translation": [0, 0, 0], "rotation": [0, 0, 0], "scale": [0.1, 0.1, 0.1]}, "color": [1.0, 0.0, 0.0, 1.0], "initSpeed": [-0.1, 0, 0, 0], "initPosition": [0, 0, 0, 1]},
+        {"name": "smashedTomato", "type": "leaf", "primitive": "cylinder", "transform": {"translation": [0, 0, 0], "rotation": [0, 0, 0], "scale": [0.2, 0.01, 0.2]}, "color": [1.0, 0.0, 0.0, 1.0]}
+    ],
+    "children": [
+        {
+            "name": "groundNode",
+            "numTiles": [13, 13],
+            "type": "internal",
+            "transform": {
+                "translation": [-24, 0, -24],
+                "rotation": [0, 0, 0],
+                "scale": [1, 1, 1]
+            },
+            "tileTypes": ["evenTile", "oddTile"],
+            "pos": [0, 0],
+            "uses": "evenTile"
+        },
+        {
+            "name": "onGroundNode",
+            "type": "internal",
+            "transform": {
+                "translation": [0, 0.05, 0],
+                "rotation": [0, 0, 0],
+                "scale": [1, 1, 1]
+            },
+            "children": [
+                {
+                    "name": "tankNode",
+                    "type": "internal",
+                    "transform": {
+                        "translation": [0, 0, 0],
+                        "rotation": [0, 0, 0],
+                        "scale": [1, 1, 1]
+                    },
+                    "children": [
+                        {
+                            "name": "lowerBaseNode",
+                            "type": "internal",
+                            "transform": {
+                                "translation": [0, 1.00, 0],
+                                "rotation": [0, 0, 0],
+                                "scale": [1, 1, 1]
+                            },
+                            "uses": "lowerBase",
+                            "children":[
+                                {
+                                    "name": "wheelsNode",
+                                    "type": "internal",
+                                    "transform": {
+                                        "translation": [0, -0.5, 0],
+                                        "rotation": [0, 0, 0],
+                                        "scale": [1, 1, 1]
+                                    },
+                                    "children": [
+                                        {
+                                            "name": "rightWheelsNode",
+                                            "type": "internal",
+                                            "transform": {
+                                                "translation": [0, 0, 1.75],
+                                                "rotation": [0, 0, 0],
+                                                "scale": [1, 1, 1]
+                                            },
+                                            "children": [
+                                                {
+                                                    "name": "wheel1Node",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [-2.5, 0, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "rightWheelNode"
+                                                },
+                                                {
+                                                    "name": "wheel2Node",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [-1.5, 0, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "rightWheelNode"
+                                                },
+                                                {
+                                                    "name": "wheel3Node",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [-0.5, 0, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "rightWheelNode"
+                                                },
+                                                {
+                                                    "name": "wheel4Node",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [0.5, 0, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "rightWheelNode"
+                                                },
+                                                {
+                                                    "name": "wheel5Node",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [1.5, 0, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "rightWheelNode"
+                                                },
+                                                {
+                                                    "name": "wheel6Node",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [2.5, 0, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "rightWheelNode"
+                                                }
+                                            ]
+                                                
+                                        },
+                                        {
+                                            "name": "leftWheelsNode",
+                                            "type": "internal",
+                                            "transform": {
+                                                "translation": [0, 0, -1.75],
+                                                "rotation": [0, 0, 0],
+                                                "scale": [1, 1, 1]
+                                            },
+                                            "children": [
+                                                {
+                                                    "name": "wheel7Node",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [-2.5, 0, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "leftWheelNode"
+                                                },
+                                                {
+                                                    "name": "wheel8Node",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [-1.5, 0, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "leftWheelNode"
+                                                },
+                                                {
+                                                    "name": "wheel9Node",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [-0.5, 0, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "leftWheelNode"
+                                                },
+                                                {
+                                                    "name": "wheel10Node",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [0.5, 0, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "leftWheelNode"
+                                                },
+                                                {
+                                                    "name": "wheel11Node",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [1.5, 0, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "leftWheelNode"
+                                                },
+                                                {
+                                                    "name": "wheel12Node",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [2.5, 0, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "leftWheelNode"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "upperBaseNode",
+                                    "type": "internal",
+                                    "transform": {
+                                        "translation": [0, 1, 0],
+                                        "rotation": [0, 0, 0],
+                                        "scale": [1, 1, 1]
+                                    },
+                                    "uses": "upperBase",
+                                    "children": [
+                                        {
+                                            "name": "cabinNode",
+                                            "type": "internal",
+                                            "transform": {
+                                                "translation": [0, 1.25, 0],
+                                                "rotation": [0, 0, 0],
+                                                "scale": [1, 1, 1]
+                                            },
+                                            "uses": "cabin",
+                                            "children":[
+                                                {
+                                                    "name": "lidNode",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [0, 0.85, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "lid"
+                                                },
+                                                {
+                                                    "name": "cannonSupportNode",
+                                                    "type": "internal",
+                                                    "transform": {
+                                                        "translation": [-2, 0, 0],
+                                                        "rotation": [0, 0, 0],
+                                                        "scale": [1, 1, 1]
+                                                    },
+                                                    "uses": "cannonSupport",
+                                                    "children": [
+                                                        {
+                                                            "name": "cannonNode",
+                                                            "type": "internal",
+                                                            "transform": {
+                                                                "translation": [-2, 0, 0],
+                                                                "rotation": [0, 0, 0],
+                                                                "scale": [1, 1, 1]
+                                                            },
+                                                            "uses": "cannon"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+           ]
+        }
+    ]  
+}

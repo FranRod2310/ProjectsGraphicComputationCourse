@@ -1,0 +1,119 @@
+{
+  "name" : "World",
+  "type" : "internal",
+  "transform" : {
+    "translation" : [0, 0, 0],
+    "rotation" : [0, 0, 0],
+    "scale" : [1, 1, 1]
+  },
+  "lightPrimitive" : {
+      "name" : "light",
+      "primitive" : "sphere",
+      "type" : "leaf",
+      "currentIndex" : 0,
+      "transform" : {
+        "translation" : [0, 0, 0],
+        "rotation" : [0, 0, 0],
+        "scale" : [0.2, 0.2, 0.2]
+      },
+      "material": {
+            "Ka": [181, 169, 0],
+            "Kd": [181, 169, 0],
+            "Ks": [181, 169, 0],
+            "Shininess": 100.0
+          }
+    },
+  "children": [
+    { 
+      "name" : "ground",
+      "primitive" : "cube",
+      "type" : "leaf",
+      "transform" : {
+        "translation" : [0, -0.5, 0],
+        "rotation" : [0, 0, 0],
+        "scale" : [10, 0.5, 10]
+      },
+      "material": {
+        "Ka": [60, 35, 20],
+        "Kd": [80, 50, 30],
+        "Ks": [30, 20, 10],
+        "Shininess": 10.0
+      }
+    },
+    {
+      "name" : "objectsNode",
+      "type" : "internal",
+      "transform" : {
+        "translation" : [0, 0, 0],
+        "rotation" : [0, 0, 0],
+        "scale" : [1, 1, 1]
+      },
+      "children" : [
+        {
+          "name" : "bunny",
+          "primitive" : "bunny",
+          "type" : "leaf",
+          "transform" : {
+            "translation" : [2, 0.74, -2],
+            "rotation" : [1, 90, -1],
+            "scale" : [2, 2, 2]
+          },
+          "material": {
+            "Ka": [0, 0, 0],
+            "Kd": [0, 0, 0],
+            "Ks": [0, 0, 0],
+            "Shininess": 0.0
+          }
+        },
+        {
+          "name" : "torus",
+          "primitive" : "torus",
+          "type" : "leaf",
+          "transform" : {
+            "translation" : [2, 0.15, 2],
+            "rotation" : [0, 0, 0],
+            "scale" : [2, 2, 2]
+          },
+          "material": {
+            "Ka": [0, 41, 0],
+            "Kd": [51, 199, 51],
+            "Ks": [255, 255, 255],
+            "Shininess": 100.0
+          }
+        },
+        {
+          "name" : "cube",
+          "primitive" : "cube",
+          "type" : "leaf",
+          "transform" : {
+            "translation" : [-2, 0.75, 2],
+            "rotation" : [0, 0, 0],
+            "scale" : [2, 2, 2]
+          },
+          "material": {
+            "Ka": [61, 0, 0],
+            "Kd": [199, 31, 31],
+            "Ks": [255, 255, 255],
+            "Shininess": 50.0
+          }
+        },
+        {
+          "name" : "cylinder",
+          "primitive" : "cylinder",
+          "type" : "leaf",
+          "transform" : {
+            "translation" : [-2, 0.75, -2],
+            "rotation" : [0, 0, 0],
+            "scale" : [2, 2, 2]
+          },
+          "material": {
+            "Ka": [0, 41, 41],
+            "Kd": [0, 150, 150],
+            "Ks": [255, 255, 255],
+            "Shininess": 100.0
+          }
+        }
+      ]
+    }
+  ]
+}
